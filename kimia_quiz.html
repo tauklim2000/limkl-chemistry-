@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Chemistry Paper 1 Quiz Generator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f6f7f9;--card:#fff;--tx:#1d2330;--mu:#667085;--ac:#1f6feb;--ok:#1a7f4b;--bad:#c0392b;--bd:#dde1e8;color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#14171c;--card:#1d222b;--tx:#e8ebf0;--mu:#9aa3b2;--ac:#5b9bff;--ok:#4cc38a;--bad:#ff7b6b;--bd:#323946;color-scheme:dark}}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 system-ui,sans-serif}
+main{max-width:720px;margin:0 auto;padding:16px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:16px;margin:12px 0}
+h1{font-size:22px;margin:8px 0}input,button,select{font:inherit}
+input,select{width:100%;padding:10px;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--tx);margin:6px 0}
+button{padding:10px 16px;border-radius:8px;border:1px solid var(--bd);background:var(--card);color:var(--tx);cursor:pointer}
+.pri{background:var(--ac);color:#fff;border-color:var(--ac)}
+.opt{display:block;width:100%;text-align:left;margin:6px 0}.opt.sel{border-color:var(--ac);outline:2px solid var(--ac)}
+.opt.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 18%,var(--card))}
+.opt.bad{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 18%,var(--card))}
+.mu{color:var(--mu);font-size:14px}.dg{background:color-mix(in srgb,var(--bad) 12%,var(--card));padding:6px 10px;border-radius:8px;font-size:14px}
+.row{display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap}
+.nav{display:flex;flex-wrap:wrap;gap:4px}.nav button{padding:4px 8px;min-width:34px;font-size:13px}.nav .done{background:var(--ac);color:#fff}
+.sc{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}td,th{padding:6px 8px;border-bottom:1px solid var(--bd);text-align:left}
+.bar{height:8px;border-radius:4px;background:var(--bd)}.bar i{display:block;height:100%;border-radius:4px;background:var(--ok)}
+</style></head><body><main id="app"></main>
+<script>
+var P={};
+P.melaka={K:"ACABADACCDCBDCAAABBCDCBCBBBCBDCBBADADCDD",Q:[
+["Table 1 shows melting and boiling points (°C): P −63.5 / 61.2; Q −111.6 / 12.7; R −218.8 / −183; S 80 / 218. Which substance is a liquid at room temperature?",["P","Q","R","S"]],
+["Which of the following is a transition element?",["Sodium","Calcium","Zinc","Neon"]],
+["Choose the statement that describes a chemical property of alkalis.",["Reacts with ammonium salts to release ammonia gas","Produces hydrogen gas when reacting with reactive metals","Causes metal corrosion","Reacts with carbonate salts to produce carbon dioxide gas"]],
+["Diagram 1 shows the electron arrangement of ion X²⁺. Which is the position of element X in the Periodic Table?",["Position A","Position B","Position C","Position D"],1],
+["Which of the following salts is insoluble in water?",["Lead(II) sulphate","Potassium sulphate","Copper(II) sulphate","Sodium sulphate"]],
+["Blue litmus paper does not change in glacial ethanoic acid, nor in glacial ethanoic acid + propanone, but turns red in glacial ethanoic acid + water. Choose the correct statement.",["Glacial ethanoic acid is a weak acid","Propanone is a universal solvent","Litmus paper does not react with glacial ethanoic acid","Acids show their acidic properties in the presence of water"]],
+["Which substance accelerates the coagulation of rubber latex?",["Ethanoic acid","Ammonia","Ethyl ethanoate","Sodium chloride"]],
+["Diagram 2 shows hydrogen ions and thiosulphate ions in Experiments I and II (II has more hydrogen ions per unit volume). Which statement shows the difference in rate of reaction?",["The number of thiosulphate ions decreases faster in Experiment I","The kinetic energy of particles in Experiment I is higher","The frequency of collisions between thiosulphate and hydrogen ions is higher in Experiment II","The activation energy in Experiment II is higher"],1],
+["Diagram 3 shows a use of substance X in daily life (a brick wall). What property of X makes it suitable?",["Waterproof","Resistant to corrosion","Hard and strong","High tensile strength"],1],
+["A resident’s water bill rose drastically. A Water Department officer found an underground pipe leak using a detector. What is the substance in the detector?",["Carbon-14","Cobalt-60","Phosphorus-32","Sodium-24"]],
+["Which of the following is a saturated hydrocarbon?",["CH₃CH₂CH₂OH","CH₂=CHCH₃","CH₃CH₂CH₃","CH₃CH₂COOH"]],
+["Na, Mg, Al, Si, P, S, Cl, Ar are elements in a period. Which statement is true across the period from left to right?",["Atomic radius increases","Metallic properties decrease","Electronegativity decreases","Acidic properties of oxides decrease"]],
+["Ethanol is a covalent compound that is soluble in water. Which statement correctly describes this?",["A hydrogen bond forms between a hydrogen atom and an oxygen atom of another ethanol molecule","A hydrogen bond forms when ethanol dissolves in water to form hydroxonium ions","A hydrogen bond forms when ethanol ionises in water to form hydrogen ions","A hydrogen bond forms when a hydrogen atom of ethanol attracts an oxygen atom of a water molecule"]],
+["How many fatty acid molecules combine with one glycerol molecule to form one molecule of fat or oil?",["1","2","3","4"]],
+["Daniell cell (Zn in ZnSO₄, Cu in CuSO₄). Which are the half equations at the negative and positive terminals?",["Neg: Zn → Zn²⁺ + 2e⁻ ; Pos: Cu²⁺ + 2e⁻ → Cu","Neg: Cu⁺ + e⁻ → Cu ; Pos: Zn → Zn⁺ + e⁻","Neg: Cu → Cu²⁺ + 2e⁻ ; Pos: Zn²⁺ + 2e⁻ → Zn","Neg: Zn → Zn⁺ + e⁻ ; Pos: Cu⁺ + e⁻ → Cu"]],
+["Diagram 5: Waste Sorting Centre → Landfill → (X) and Methane Gas Recovery. Which statement correctly describes level X (wastewater treatment)?",["The treated wastewater is discharged as effluent","Uses filtration to treat industrial wastewater","Used to treat only solid waste and human waste water","The treated wastewater is suitable as drinking water"],1],
+["A compound contains elements P and Q. The percentage by mass of P is 25.26%. The empirical formula is PQ₂. If the relative atomic mass of P is 24, what is the relative atomic mass of Q?",["35.5","36","34.5","37"]],
+["Diagram 6 shows the atomic structure of an element. How many electrons are in this atom?",["4","6","12","24"],1],
+["Which has the same number of atoms as 12 dm³ of ammonia gas at room temperature? [H=1, C=12, N=14, O=16, S=32; molar volume 24 dm³ mol⁻¹]",["44 g of CO₂","40 g of SO₃","2.8 g of N₂","1.0 g of H₂"]],
+["Diagram 7: X is in Group 1 and Y in Group 16. Which diagram represents the compound formed when X reacts with Y?",["Ionic compound X⁺ Y²⁻ (one X)","Covalent compound (Y shares one bond with one X)","Ionic compound X⁺ Y²⁻ X⁺ (two X)","Covalent compound of Y with two X"],1],
+["Set I: 25 cm³ of 0.5 mol dm⁻³ acid HX + magnesium tape. Set II: 25 cm³ of 0.5 mol dm⁻³ acid H₂X + magnesium tape. Why is the rate of Set II higher?",["Higher total surface area of reactants","Lower activation energy","Reactant molecules have higher kinetic energy","More hydrogen ions, H⁺, per unit volume"]],
+["Diagram 8 shows carbon and metal Y in the Reactivity Series. Metal Y can be extracted from its ore by reduction with carbon. What is Y?",["Aluminium","Silver","Iron","Copper"],1],
+["Which statement explains why a “sea of electrons” can conduct electric current?",["Electrons only vibrate in their original positions","Electrons can move freely and carry charge","Metals have closely packed, layered particles","Electric current is produced by movement of metal ions"]],
+["Diagram 9 (energy profile N₂ + O₂ → 2NO) and Table 5 (N≡N 945; O=O 498; N–O 201 kJ mol⁻¹). Which gives the correct level and value for the heat of reaction?",["Level I, −1242","Level I, +1242","Level II, +1041","Level II, −1041"],1],
+["Which food additives have the correct function? I Sodium benzoate: slows bacterial growth. II Aspartame: slows oxidation of fats. III Pectin: thickens liquids. IV Lecithin: adds flavour.",["I and II","I and III","II and III","III and IV"]],
+["25 cm³ of 0.1 mol dm⁻³ NaOH neutralises 0.05 mol dm⁻³ HCl. Calculate the volume of HCl required.",["25 cm³","50 cm³","75 cm³","12.5 cm³"]],
+["X and Y are Group 1 elements. Y moves very rapidly on water with “hiss” and “pop” and burns with a purple flame; X moves rapidly and burns with a yellow flame. Which statement explains this?",["Atomic size of Y is smaller than X","Atoms of Y more easily donate electrons to achieve a stable octet","Y has more valence electrons than X","Nuclear attraction on valence electrons is stronger in Y"]],
+["Solutions X, Y, Z (same concentration and volume): pH 5, 2, 1; degree of ionisation low, high, high; time to react completely with excess zinc: slow, fast, fastest. What are X, Y and Z?",["X = HCl, Y = CH₃COOH, Z = H₂SO₄","X = HCl, Y = H₂SO₄, Z = CH₃COOH","X = CH₃COOH, Y = HCl, Z = H₂SO₄","X = H₂SO₄, Y = CH₃COOH, Z = HCl"]],
+["Diagram 10: a weight is dropped on duralumin (dent 0.1 cm deep) and on material X (dent 0.5 cm deep). What is X?",["Steel","Aluminium","Bronze","Pewter"],1],
+["Given: Cr₂O₇²⁻ + Fe²⁺ → Cr³⁺ + Fe³⁺. What is the observation and the change in oxidation number of chromium?",["Purple to colourless; +4 to +3","Purple to colourless; +6 to +3","Orange to green; +4 to +3","Orange to green; +6 to +3"]],
+["Substance A is made of natural rubber; substance B of polyethene. What is the long-term effect of widespread use of B compared with A?",["Increases demand for renewable natural resources","Reduces carbon dioxide emissions","Contributes to pollution because it is not easily biodegradable","Supports sustainable agriculture"]],
+["Diagram 11: a student tried to plate an iron spoon with copper but failed. Which steps are needed so plating occurs evenly? I Lower the voltage; II Add more dry cells; III Change the positions of the iron spoon and copper; IV Increase the concentration of copper(II) sulphate.",["I and II","I and III","II and IV","III and IV"],1],
+["Diagram 12: a car body with scratched paint exposed to humidity. What happens to the exposed iron in terms of redox?",["Iron acts as anode and undergoes reduction","Iron acts as anode and undergoes oxidation","Iron does not react because it contacts air and water","Iron acts as electrolyte in the cell formed"],1],
+["Zn + CuSO₄ → Cu + ZnSO₄, ΔH = −46.2 kJ mol⁻¹ (Exp I); Mg + CuSO₄ → Cu + MgSO₄, ΔH = −84.0 kJ mol⁻¹ (Exp II). What is the difference in temperature rise if 50 cm³ of 1.0 mol dm⁻³ CuSO₄ is used? [c = 4.2 J g⁻¹ °C⁻¹]",["9 °C","11 °C","2 °C","19 °C"]],
+["Diagram 13: ethene, C₂H₄ → (hydration) compound A → (process Y) ethanoic acid. What are compound A and process Y?",["A = ethane; Y = substitution","A = ethanol; Y = esterification","A = ethane; Y = addition","A = ethanol; Y = oxidation"],1],
+["Salt X is dissolved in water. A few drops of ammonia give a white precipitate (see Diagram 14 for the excess-ammonia result). Excess hydrochloric acid then barium chloride gives a white precipitate. What is salt X?",["Al₂(SO₄)₃","CaCl₂","ZnSO₄","MgCl₂"],1],
+["Aiman burned 24 g of magnesium completely in air. Calculate the mass of magnesium oxide formed. [Mg = 24, O = 16]",["80 g","32 g","48 g","40 g"]],
+["Diagram 15 shows the electron arrangements of atoms P and Q. Which is true when P reacts with Q?",["Atoms P and Q share electrons","The compound has a low boiling point","The compound has the formula P₂Q","The compound conducts electricity only in the molten state"],1],
+["A lab-made body lotion feels oily on the skin. Which cosmetic additive and example should be added to reduce the problem?",["Thickener – glycerin","Preservative – paraben","Moisturiser – lecithin","Emulsifier – stearic acid"]],
+["Diagram 14: structural formula of CH₃–CH=C(CH₃)–CH₃ (2-methylbut-2-ene). Which is an isomer of this compound?",["Pent-4-ene","Pent-3-ene","3-methylbut-3-ene","2-methylbut-1-ene"],1]
+]};
+P.sbp={K:"ABDDABDAACADBDACCBDCCBACDCCBDCBABADBDBAC",Q:[
+["Diagram 1: a lollipop placed under sunlight becomes soft and melts. What is process X?",["Melting","Evaporation","Freezing","Sublimation"]],
+["Which of the following matches is correct about a neutron (relative charge; relative mass)?",["−1 ; 0","0 ; 1","0 ; 0","+1 ; 1"]],
+["“Electrons that are free to move and are not owned by any atom nor ion.” What is the correct term?",["Valence electron","Metallic bond","Sea of electrons","Delocalised electrons"]],
+["Graphene is a material with many superior properties. What are the properties of graphene?",["Opaque","Shining","Strong and hard","Low electrical resistance"]],
+["Which of the following bases dissolves in water?",["Sodium oxide","Magnesium oxide","Calcium hydroxide","Copper(II) hydroxide"]],
+["Which noble gases are correctly matched with their uses? I Helium: oxygen tank of divers. II Radon: anaesthesia. III Krypton: lasers for eye retina treatment. IV Xenon: treating cancer.",["I and II","I and III","II and IV","III and IV"]],
+["What is the property of yttrium barium copper oxide ceramic, YBCO?",["High stretching strength","High compression strength","High electrical resistance at room temperature","No electrical resistance at very low temperature"]],
+["Diagram 8 shows the electron arrangement of an ionic compound (cation and anion). Which substance can dissolve the compound?",["Water","Ethanol","Hexane","Methylbenzene"],1],
+["Which of the following is an example of a fast reaction and a slow reaction?",["Fast: combustion of petrol in a car engine; slow: photosynthesis","Fast: photosynthesis; slow: fruit decay","Fast: electric cell reaction; slow: combustion of petrol in a car engine","Fast: fruit decay; slow: electric cell reaction"]],
+["Apparatus (measuring cylinder, beaker, conical flask) is made of substance M. Which characteristics make M suitable? I High refractive index; II Low coefficient of thermal expansion; III Resistance to high temperature when heated; IV Easy to mould into glass containers.",["I and II","I and IV","II and III","III and IV"]],
+["Which of the following metals is extracted from its ore by the electrolysis method?",["Potassium","Copper","Tin","Iron"]],
+["Reaction Q occurs when methane gas reacts with chlorine gas under sunlight. What is reaction Q?",["Combustion","Hydration","Oxidation","Substitution"]],
+["Which number of moles represents the correct heat of reaction?",["Mole of salt produced for heat of neutralisation","Mole of solid formed for heat of precipitation","Mole of oxygen supplied for heat of combustion","Mole of metal used for heat of displacement"]],
+["Diagram 14: a polymer with repeat unit –CH₂–CH=C(CH₃)–CH₂–. What is a characteristic of the polymer?",["High permeability in water","Becomes brittle when heated","Hard white solid at room temperature","Easily reacts with alkali"]],
+["In an experiment to determine the empirical formula of copper oxide, hydrogen gas is flowed continuously until the glass tube cools to room temperature after heating stops. Why is this step taken?",["Avoid copper from being oxidised","Remove the air from the glass tube","Ensure the reaction is completed","Avoid water droplets forming on the wall of the glass tube"]],
+["Diagram 16 shows a plant (aloe vera) found around residential areas. What is the function of the plant?",["Relieves joint pain","Prevents colds","Treats skin disease","Reduces cholesterol level"],1],
+["Diagram 17: energy profile for X + Y → Z (exothermic). Which diagram shows the correct activation energy, Ea?",["Diagram A: Ea from level Z up to the peak","Diagram B: Ea from level Z up to the peak (dashed line at Z)","Diagram C: Ea from level X + Y up to the peak","Diagram D: Ea between X + Y and Z"],1],
+["Hydrogen chloride gas reacts with ammonia gas to form ammonium chloride. Which statement is correct about the reaction?",["1 unit of hydrogen chloride reacts with 1 unit of ammonia producing 1 unit of ammonium chloride","1 mol of hydrogen chloride molecules reacts with 1 mol of ammonia molecules producing 1 mol of ammonium chloride","1 molecule of hydrogen chloride reacts with 1 molecule of ammonia producing 1 molecule of ammonium chloride","0.5 mol of hydrogen chloride reacts with 1 mol of ammonia producing 1.5 mol of ammonium chloride"]],
+["An atom of element T is represented as ¹⁹₉T. Which property is correct about T?",["Produces a yellowish solution when dissolved in sodium hydroxide solution","Reacts with bromine to form a brown solid","Reacts with oxygen gas to form a basic oxide","Produces an acidic solution when dissolved in water"]],
+["Which particle is responsible for showing acidic properties in hydrogen chloride solution?",["Hydrogen atom","Chloride ion","Hydrogen ion","Hydroxide ion"]],
+["Sodium ²³₁₁Na and oxygen ¹⁶₈O react. Which statement explains how the bond is formed?",["One Na atom donates one electron to one O atom","Two Na atoms donate one electron each to one O atom","One O atom receives one electron each from two Na atoms","One O atom shares two pairs of electrons with one Na atom"]],
+["Which of the following is a reduction reaction?",["Zn atom changes to Zn²⁺ ion","MnO₄⁻ ion changes to Mn²⁺ ion","Cl⁻ ion changes to Cl₂ molecule","H₂S molecule changes to S atom"]],
+["Diagram 23: Set I (carbon electrode X; potassium bromide solution and sulphuric acid, chlorine water) and Set II (carbon electrode Y; 1 mol dm⁻³ copper(II) sulphate). What is the process at electrode X in Set I and the observation at electrode Y in Set II?",["Oxidation; brown solid deposited","Oxidation; colourless gas bubbles released","Reduction; brown solid deposited","Reduction; colourless gas bubbles released"],1],
+["2H⁺ + S₂O₃²⁻ → S + SO₂ + H₂O. Which statement explains the effect of increasing the concentration of sodium thiosulphate on the rate of reaction?",["Activation energy becomes lower","Kinetic energy of thiosulphate ions increases","Mass of sodium thiosulphate dissolved in 1 dm³ water increases","The time of collision between hydrogen ions and thiosulphate ions increases"]],
+["Aqil washed an oil stain on his shirt using soap and well water but the dirt remained. Which statement describes the situation?",["The well water temperature is low","Soluble salts are produced","A small amount of soap is used","Calcium ions and magnesium ions are present in well water"]],
+["Which of the following explains the use of stainless steel in a washing machine?",["Absorbs odour and dirt from clothes","Withstands high heat produced","Has resistance to corrosion","Conducts the electric current supplied"]],
+["Which of the following is the same for 1 mole of SO₂ gas and 1 mole of SO₃ gas?",["Mass","Number of atoms","Number of molecules","Number of electrons"]],
+["CH₃CH₂OH → CH₂=CH₂ + H₂O using substance X. Which substances are suitable as X? I Porcelain chips; II Phosphoric acid; III Slaked lime; IV Concentrated sulphuric acid.",["I and II","I and IV","II and III","III and IV"]],
+["In an experiment to determine heat of reaction, 200 cm³ of water in a copper container is heated by a spirit lamp. Which assumption should be made in the calculation?",["The density of fuel equals the density of water","The volume of water and the mass of fuel used are proportional","The specific heat capacity of fuel equals that of water","Heat released during combustion of fuel is not absorbed by the copper container"]],
+["Diagram 30: polymer X is a polyester (unit –O–CH₂CH₂–O–CO–C₆H₄–CO–). Which statement is correct about the polymerisation reaction to produce X?",["It occurs at the hydroxyl and carboxylate groups of the monomers","It occurs on monomers which have a single covalent bond in the molecule","The products are polymer X and another by-product","It involves monomers from the same homologous series"],1],
+["Boron has two isotopes: Boron-y (20.0%) and Boron-11 (80.0%). What is the value of y? [Relative atomic mass of B = 10.8]",["2.8","10","10.9","11.2"]],
+["The empirical formula of compound P is CH₂O (molar mass 60 g mol⁻¹). What is the volume of hydrogen gas released when 20 cm³ of 0.5 mol dm⁻³ compound P reacts with excess zinc? [molar volume 24 dm³ mol⁻¹]",["120 cm³","240 cm³","1200 cm³","2400 cm³"]],
+["Element Y (Group 1, relative atomic mass 7) is burnt in oxygen gas. What is the mass of Y burnt if the number of moles of product is 0.15 mol?",["1.05 g","2.10 g","4.20 g","7.00 g"]],
+["Amin’s finger was stung by a bee. What action should his mother take to relieve the pain?",["Apply baking powder paste on the finger","Put aloe vera gel on the finger","Squeeze lime juice on the finger","Dip finger into vinegar"]],
+["C₆H₁₂O₆ → (yeast) W + X, where X is a gas. What is substance W and the observation of the chemical test to identify X?",["W = CH₃COOH; blue litmus paper turns red","W = CH₃COOH; lighted splinter produces a pop sound","W = C₂H₅OH; glowing splinter lights up","W = C₂H₅OH; lime water turns cloudy"]],
+["Diagram 36: pupils try to plate an iron spoon with a silver electrode in 0.5 mol dm⁻³ copper(II) sulphate solution, but the spoon becomes brown. What modification gives a grey coating?",["Rotate the iron spoon continuously","Change the copper(II) sulphate solution to silver nitrate solution","Change the concentration of copper(II) sulphate to 2.0 mol dm⁻³","Change the battery terminals of the silver electrode and iron spoon"]],
+["The heat of displacement of copper is −210 kJ mol⁻¹. 100 cm³ of 0.5 mol dm⁻³ copper(II) sulphate at 30.0 °C is used. What is the maximum temperature of the mixture? [c = 4.2 J g⁻¹ °C⁻¹]",["25.0 °C","35.0 °C","45.0 °C","55.0 °C"]],
+["Diagram 38: rubber I and rubber II (with sulphur) are stretched by a 200 g weight. Which statement explains the comparison of this property?",["Attraction forces between rubber polymers in rubber II are stronger with sulphur","Sulphur cross links pull the rubber polymer chains in rubber II back to their original arrangement","Formation of sulphur cross links decreased the number of double covalent bonds in rubber I","Relative molecular mass of rubber I is greater with sulphur"],1],
+["25 cm³ of barium hydroxide solution is titrated with hydrochloric acid of pH 1. Acid volumes used: titration I 25.00 cm³, II 24.00 cm³, III 26.00 cm³. What is the concentration of the barium hydroxide?",["0.050 mol dm⁻³","0.025 mol dm⁻³","0.100 mol dm⁻³","0.200 mol dm⁻³"]],
+["Exp I: 50 cm³ of 2.0 mol dm⁻³ hydrochloric acid + excess zinc. Exp II: 25 cm³ of 2.0 mol dm⁻³ sulphuric acid + excess zinc. Which graph (volume of hydrogen against time) represents both experiments?",["Graph A: I reaches a higher volume","Graph B: I reaches a higher volume, II lower","Graph C: same final volume, curve II steeper","Graph D: same final volume, curve I steeper"],1]
+]};
+P.mrsm={K:"DDDDAACABDAACBDDBAACABCCABCCBCBBDCCACCDA",Q:[
+["Which atomic structure model was introduced by James Chadwick?",["Model A: electrons only","Model B: shells with electrons around a nucleus containing protons","Model C: electrons around a nucleus containing protons","Model D: shells with electrons around a nucleus containing protons and neutrons"],1],
+["Which statement is true for 0.5 mol of oxygen gas? [O = 16; Avogadro constant = 6.02 × 10²³ mol⁻¹; molar volume 24 dm³ mol⁻¹]",["Relative molecular mass is 16","The number of molecules is 6.02 × 10²³","Occupies a volume of 24 cm³ at room condition","The number of atoms is the same as one mole of helium"]],
+["Diagram 1 shows gas X given to a patient as an anaesthesia. What is gas X?",["Neon","Helium","Radon","Xenon"]],
+["Why does the reactivity of elements in Group 1 increase when going down the group?",["The boiling point decreases","Density of element increases","The number of electrons increases","The attraction force of the nucleus towards the valence electron becomes weaker"]],
+["Which shows the Lewis structure of a hydrogen chloride molecule? [Proton number: H = 1, Cl = 17]",["Structure A","Structure B","Structure C","Structure D"],1],
+["Which of the following substances can conduct electricity at room temperature?",["Copper","Glucose","Silicon dioxide","Sodium chloride"]],
+["Diagram 2: magnesium ribbon is added to acetic acid and the gas is tested with a burning wooden splinter. What is the gas produced?",["Chlorine","Oxygen","Hydrogen","Carbon dioxide"]],
+["Na₂S₂O₃ + 2HCl → 2NaCl + SO₂ + H₂O + S. What is the observable and measurable change for the reaction?",["Formation of sulphur precipitate","Decrease in concentration of hydrochloric acid","Increase in the mass of sodium thiosulphate","Decrease in the volume of sulphur dioxide gas"]],
+["Diagram 3 shows equipment made from an alloy (stainless-steel items). Which is the correct match (main component; foreign atoms)?",["Copper; tin","Iron; chromium, nickel and carbon","Tin; antimony and copper","Aluminium; copper, magnesium and manganese"],1],
+["Which of the following is true about an oxidation reaction?",["Gain of electrons","Loss of oxygen","Gain of hydrogen","Oxidation number increases"]],
+["Which statement is correct about the petroleum cracking process?",["Uses a catalyst","Occurs at low temperature and pressure","Used to produce long-chain hydrocarbons","Separation of petroleum compounds based on difference in boiling point"]],
+["Diagram 4 shows the structural formula of a compound. What is its homologous series?",["Ester","Alkene","Alcohol","Carboxylic acid"],1],
+["Which substance absorbs heat when it dissolves in water?",["Sulphuric acid","Potassium hydroxide","Sodium thiosulphate","Calcium oxide"]],
+["Which is true about natural polymers (monomer; polymer)?",["Sucrose; starch","Glucose; cellulose","Isoprene; protein","Amino acid; natural rubber"]],
+["What is the side effect of betamethasone valerate used in cosmetics?",["Causes damage to the kidneys and nervous system","Hypersensitive skin","Redness and peeling skin","Skin irritation and changes to skin pigmentation"]],
+["Element Z: the electron arrangement of the Z³⁺ ion is 2.8 and the nucleon number of atom Z is 27. Which is the atomic structure of element Z?",["Structure A","Structure B","Structure C","Structure D (13 protons, 14 neutrons, electron arrangement 2.8.3)"],1],
+["Diagram 5 compares the mass of one iron atom with nitrogen atoms. Which can replace the nitrogen, N atom? [Li = 7, N = 14, Mg = 24, Si = 28, S = 32] I 2 silicon atoms; II 3 magnesium atoms; III 4 sulphur atoms; IV 8 lithium atoms.",["I and II","I and IV","II and III","III and IV"],1],
+["Diagram 6 shows part of the Periodic Table with elements P, Q, R, S, T (P and R in the left-hand groups, Q at the top right, S and T in the right-hand groups of period 3). What is the arrangement of atomic size in ascending order?",["Q, P, T, S, R","R, S, T, P, Q","P, Q, R, S, T","T, S, R, Q, P"],1],
+["Diagram 7 shows the electron arrangements of atoms X and Y, which combine to form a compound. What is the type of bond and chemical formula?",["Ionic; XY","Ionic; XY₂","Covalent; XY₂","Covalent; XY"],1],
+["Toothpaste can be used to treat an ant bite. What is one chemical substance found in the ant bite?",["Sulphuric acid","Sodium nitrate","Methanoic acid","Sodium hydroxide"]],
+["Diagram 8: bromine water is added to iron(II) sulphate solution. What is the observation?",["Green solution turns brown","No changes occur","Brown solution turns green","Colourless solution turns brown"]],
+["Diagram 9: graph of volume of gas against time for excess zinc powder with dilute sulphuric acid. The rate of reaction at time t is zero. Which explains the rate at time t?",["Time taken for reaction increases","All acid has reacted","Volume of gas remains constant","All zinc powder has reacted"],1],
+["A dental implant must be corrosion resistant, inert, hard and strong. Which ceramic is most suitable?",["Silicon carbide","Alumina","Zirconia","Titanium carbide"]],
+["Diagram 11: blast furnace used to extract iron from its ore. In which zone does the reaction Fe₂O₃ + 3CO → 2Fe + 3CO₂ occur?",["Zone 1","Zone 2","Zone 3"],1],
+["Diagram 12: magnesium blocks are attached to the steel pillars of an oil rig in seawater. How do the magnesium blocks protect the steel pillars from rusting?",["Magnesium block is easier to undergo oxidation","Magnesium block is easier to react with steel pillars","Magnesium block is an oxidising agent","Magnesium block prevents the steel pillars from contact with water and oxygen"]],
+["What is the product formed when propene gas reacts with steam?",["Structure A","Structure B","Structure C","Structure D"],1],
+["Diagram 13: butan-1-ol is heated with acidified potassium dichromate(VI) solution to produce compound R. What is the molecular formula of R?",["C₄H₉OH","C₄H₈(OH)₂","C₃H₇COOH","C₄H₉COOH"]],
+["Reaction I: Mg(NO₃)₂ + Na₂CO₃ → MgCO₃ + 2NaNO₃. Reaction II: H₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O. Which is correct about reactions I and II?",["I releases heat to the surrounding; II absorbs heat from the surrounding","I: container becomes hot; II: container becomes cold","I: total energy of reactants lower than products; II: total energy of reactants higher than products","I: temperature of surrounding increases; II: temperature of surrounding decreases"]],
+["Diagram 15 shows the structure of a polymer. Which is the monomer of this polymer?",["Structure A","Structure B","Structure C","Structure D"],1],
+["Diagram 16 shows a food containing additive X. Which pair is correct (additive; function)?",["Triphenyl; dyes","Propyl ethanoate; flavourings","Sodium nitrite; preservatives","Ascorbic acid; antioxidants"],1],
+["Diagram 17 shows the structural formula of acetamide, CH₃CONH₂. What is the number of carbon atoms in 14.75 g of acetamide? [H = 1, C = 12, N = 14, O = 16; 6.02 × 10²³ mol⁻¹]",["1.5 × 10²³","3.0 × 10²³","1.2 × 10²⁴","1.4 × 10²⁴"]],
+["A white layer containing calcium carbonate formed on the heating coil of Ali’s electric kettle. Which substances can he use to remove it? I Vinegar; II Baking powder; III Soap; IV Lemon.",["I and II","I and IV","II and III","III and IV"]],
+["Element L is in Period 3, Group 2; element M is in Period 2, Group 16. Which is the chemical equation for the reaction between L and M?",["L + M → LM","L + 2M → LM₂","L₂ + M → L₂M","2L + M₂ → 2LM"]],
+["Diagram 19: 500 cm³ of 0.1 mol dm⁻³ Solution II is prepared by pipetting 50 cm³ of Solution I (250 cm³, y mol dm⁻³, made from x g NaOH) and diluting. What are x and y? [H = 1, O = 16, Na = 23]",["x = 2.0, y = 0.2","x = 8.0, y = 0.8","x = 10.0, y = 1.0","x = 44.0, y = 4.0"]],
+["Volume of CO₂ collected from limestone powder and dilute HCl: 0 s 0.00; 30 s 19.00; 60 s 22.80; 90 s 36.40; 120 s 44.20; 150 s 49.50; 180 s 55.00; 210 s 55.00; 240 s 55.00 (cm³). What is the average rate of reaction in the second minute?",["0.260 cm³ s⁻¹","0.306 cm³ s⁻¹","0.357 cm³ s⁻¹","0.368 cm³ s⁻¹"]],
+["Diagram 20: electrolysis of 1.0 mol dm⁻³ copper(II) chloride with carbon electrodes. E° values: 2H⁺/H₂ 0.00 V; Cu²⁺/Cu +0.34 V; O₂/OH⁻ +0.40 V; Cl₂/Cl⁻ +1.36 V. What are the half equations at the anode and cathode?",["Anode: 2Cl⁻ → Cl₂ + 2e⁻ ; Cathode: Cu²⁺ + 2e⁻ → Cu","Anode: Cl₂ + 2e⁻ → 2Cl⁻ ; Cathode: 2H⁺ + 2e⁻ → H₂","Anode: O₂ + 2H₂O + 4e⁻ → 4OH⁻ ; Cathode: H₂ → 2H⁺ + 2e⁻","Anode: 4OH⁻ → O₂ + 2H₂O + 4e⁻ ; Cathode: Cu²⁺ + 2e⁻ → Cu"]],
+["Diagram 21: propanol is passed over porcelain chips to give compound J; heated with acidified potassium manganate(VII) to give compound K; burnt in excess oxygen to give gas L + H₂O. Which reagents confirm J, K and L?",["J: acidified KMnO₄; K: ethanol; L: lighted wooden splinter","J: calcium carbonate; K: bromine water; L: limewater","J: bromine water; K: calcium carbonate; L: limewater","J: ethanol; K: calcium carbonate; L: lighted wooden splinter"]],
+["Diagram 22: determining the heat of combustion of ethanol using 300 cm³ of water in a copper can. The heat of combustion is −1371 kJ mol⁻¹. What is the highest temperature of the water when 1.15 g of ethanol burns completely? [H = 1, C = 12, O = 16; c = 4.2 J g⁻¹ °C⁻¹] (initial temperature is shown in the diagram)",["36.0 °C","53.0 °C","55.0 °C","59.0 °C"],1],
+["Salt X solution: white precipitate insoluble in excess sodium hydroxide; white precipitate insoluble in excess ammonia; white precipitate with silver nitrate. What is salt X?",["Zinc chloride","Calcium nitrate","Aluminium sulphate","Magnesium chloride"]],
+["Neutralisation with 50 cm³ NaOH: Set I: 50 cm³ of 1.0 mol dm⁻³ acid X + 2.0 mol dm⁻³ NaOH, rise 13.0 °C. Set II: 1.0 mol dm⁻³ acid Y + 1.0 mol dm⁻³ NaOH, rise 6.5 °C. Set III: 1.0 mol dm⁻³ acid Z + 1.0 mol dm⁻³ NaOH, rise 6.0 °C. Which is true (acid X; basicity of Y; strength of Z)?",["Sulphuric acid; monoprotic; weak","Hydrochloric acid; diprotic; strong","Phosphoric acid; monoprotic; weak","Nitric acid; diprotic; strong"]]
+]};
+var E={melaka:[
+"A substance is liquid at room temperature (about 25 °C) when its melting point is below 25 °C and its boiling point is above 25 °C. Only P fits; Q boils at 12.7 °C so it is a gas, and S is still solid.",
+"Transition elements are the d-block metals in Groups 3–12; zinc is one. Sodium and calcium are s-block metals and neon is a noble gas.",
+"Alkalis release ammonia gas when warmed with ammonium salts. The other options describe acids.",
+"X²⁺ has the arrangement 2.8, so the atom X is 2.8.2: Group 2, Period 3 (magnesium).",
+"Lead(II) sulphate is the insoluble sulphate. Sulphates of potassium, sodium and copper(II) dissolve in water.",
+"Litmus turns red only when water is present, because acids ionise in water to produce H⁺ ions. Without water the acid shows no acidic properties.",
+"Acids coagulate latex, while ammonia keeps latex liquid by preventing coagulation.",
+"Experiment II has more H⁺ ions per unit volume, so the frequency of collisions (and of effective collisions) is higher. Concentration does not change kinetic energy or activation energy.",
+"Walls and building structures must be hard and strong to carry loads.",
+"Sodium-24 is a short-lived gamma emitter used as a tracer to detect leaking underground pipes.",
+"A saturated hydrocarbon contains only C and H and only single C–C bonds. CH₃CH₂CH₃ (propane) fits; the others are an alcohol, an alkene and a carboxylic acid.",
+"Across a period from left to right, atomic radius decreases, metallic properties decrease, electronegativity increases and oxides become more acidic.",
+"Ethanol dissolves in water because a hydrogen bond forms between the H of ethanol’s –OH group and the O of a water molecule.",
+"Fats and oils are triesters. Glycerol has 3 –OH groups, so it combines with 3 fatty acid molecules.",
+"Zinc is more electropositive, so it is the negative terminal and is oxidised: Zn → Zn²⁺ + 2e⁻. Cu²⁺ ions are reduced at the positive terminal: Cu²⁺ + 2e⁻ → Cu.",
+"After treatment at the waste water plant, the treated water is released as effluent into rivers. It is not drinkable and is not a filtration of industrial waste only.",
+"P is 25.26% of the compound, so Mr = 24 ÷ 0.2526 = 95. For PQ₂: 24 + 2Ar(Q) = 95, so Ar(Q) = 35.5.",
+"Count the electrons shown on the shells in the diagram. The atom has 6 electrons (2 + 4), which is carbon.",
+"12 dm³ ÷ 24 = 0.5 mol NH₃, which has 4 atoms per molecule = 2 mol atoms. 40 g SO₃ = 0.5 mol, also 4 atoms per molecule = 2 mol atoms.",
+"X (Group 1) donates 1 electron and Y (Group 16) needs 2, so two X atoms combine with one Y atom: ionic X₂Y, with ions X⁺ and Y²⁻.",
+"H₂X is a diprotic acid, so at the same concentration it gives twice as many H⁺ ions per unit volume as HX. This gives more frequent effective collisions with Mg.",
+"Carbon can only reduce metals below it in the Reactivity Series. Look at Diagram 8: Y sits just below carbon, which corresponds to iron. Aluminium lies above carbon.",
+"The delocalised “sea of electrons” moves freely throughout the metal and carries charge, so metals conduct electricity.",
+"Heat of reaction = energy to break bonds − energy released forming bonds = (945 + 498) − 2(201) = +1041 kJ mol⁻¹. It is endothermic, shown by arrow II (I is the activation energy).",
+"Sodium benzoate is a preservative, which slows bacterial growth, and pectin is a thickener. Aspartame is a sweetener and lecithin is an emulsifier.",
+"Moles of NaOH = 0.1 × 25/1000 = 0.0025 mol. HCl and NaOH react 1:1, so volume of HCl = 0.0025 ÷ 0.05 = 0.05 dm³ = 50 cm³.",
+"Y is more reactive because its atom is larger. The outermost electron is farther from the nucleus and attracted more weakly, so it is donated more easily.",
+"The pH is lowest for Z (1) and it reacts fastest, so Z is diprotic H₂SO₄. Y is strong HCl (pH 2). X has pH 5 and a low degree of ionisation, so it is the weak acid CH₃COOH.",
+"Material X has a deeper dent, so it is softer. Pure aluminium is softer than the alloy duralumin, because the foreign atoms in an alloy stop the layers sliding.",
+"Cr₂O₇²⁻ (+6) is reduced to Cr³⁺ (+3), and the colour changes from orange to green. Fe²⁺ is oxidised to Fe³⁺.",
+"Polyethene is a synthetic polymer that is not biodegradable, so its widespread use causes long-term pollution. Natural rubber breaks down in nature.",
+"The object to be plated (iron spoon) must be the cathode, connected to the negative terminal. The copper is the anode (positive). A lower voltage also gives a smoother, more even layer.",
+"Scratched iron becomes the anode: it is oxidised, Fe → Fe²⁺ + 2e⁻, and the Fe²⁺ eventually forms rust.",
+"Moles of CuSO₄ = 1.0 × 50/1000 = 0.05 mol. Exp I: 46.2 × 0.05 = 2.31 kJ → ΔT = 2310/(50 × 4.2) = 11 °C. Exp II: 84.0 × 0.05 = 4.2 kJ → ΔT = 20 °C. Difference = 9 °C.",
+"Ethene is hydrated to ethanol (compound A). Ethanol is then oxidised to ethanoic acid by acidified potassium manganate(VII) or dichromate(VI).",
+"A white precipitate with BaCl₂ after adding HCl means sulphate (SO₄²⁻). The cation is Al³⁺, whose white precipitate does not dissolve in excess ammonia. CaCl₂ and MgCl₂ have no sulphate.",
+"24 g of Mg is 1 mol, so it gives 1 mol MgO (Mr = 24 + 16 = 40), which is 40 g.",
+"P is a Group 1 metal and donates 1 electron, while Q (Group 16) accepts 2, forming ionic P₂Q. Ionic compounds conduct when molten or dissolved, so D is wrong.",
+"An oily feel means oil and water are not blending well. An emulsifier such as stearic acid helps them mix. Glycerin is a moisturiser and paraben is a preservative.",
+"Isomers share the same molecular formula (C₅H₁₀) but differ in structure. 2-methylbut-1-ene is C₅H₁₀; the other names are invalid."
+],sbp:[
+"A solid that becomes soft or liquid when heated is melting.",
+"A neutron is neutral (charge 0) and has a relative mass of 1.",
+"Electrons that are not held by any particular atom are delocalised electrons; they move throughout the metal structure.",
+"Graphene is an excellent electrical conductor, so it has a very low electrical resistance.",
+"Oxides of Group 1 metals, such as sodium oxide, dissolve in water to form alkalis. MgO and Cu(OH)₂ are insoluble, and Ca(OH)₂ is only slightly soluble.",
+"Helium is used in divers’ breathing gas and krypton in eye-retina lasers. Radon is radioactive and used for cancer; xenon is used as an anaesthetic.",
+"YBCO is a superconductor: its electrical resistance falls to zero at very low temperatures.",
+"The compound is ionic, and ionic compounds dissolve in polar solvents such as water. Hexane and methylbenzene are non-polar organic solvents.",
+"Burning petrol in an engine is fast; photosynthesis is slow.",
+"Lab glassware must tolerate heating: low thermal expansion (does not crack) and resistance to high temperature.",
+"Very reactive metals such as potassium cannot be reduced by carbon, so they are extracted by electrolysis of their molten ores.",
+"Methane reacting with chlorine in sunlight replaces H atoms with Cl atoms. This is a substitution reaction.",
+"Heat of precipitation is measured per mole of precipitate formed.",
+"The polymer is polyisoprene (natural rubber), which is flexible, so A, B and C are wrong. The marking scheme gives D.",
+"Hot copper reacts with oxygen in air, so hydrogen keeps flowing during cooling to stop the copper being oxidised again.",
+"Aloe vera gel is used to treat skin conditions such as burns and minor wounds.",
+"Activation energy is the energy difference between the reactants (X + Y) and the peak of the curve.",
+"The balanced equation HCl + NH₃ → NH₄Cl gives a 1 : 1 : 1 mole ratio. NH₄Cl is ionic, so it has no molecules (C is wrong).",
+"T has proton number 9 (fluorine, a halogen). Halogens dissolve in water to form acidic solutions.",
+"The acidic properties of HCl come from hydrogen ions (H⁺) that form when it ionises in water.",
+"Na (2.8.1) donates 1 electron and O (2.6) accepts 2, so one O atom receives one electron from each of two Na atoms, giving Na₂O.",
+"Reduction is a decrease in oxidation number or gain of electrons. In MnO₄⁻ Mn is +7 and in Mn²⁺ it is +2.",
+"In Set I, bromide ions at X lose electrons (oxidation) to form brown bromine. In Set II, copper(II) ions are reduced at the cathode Y and brown solid copper is deposited.",
+"A higher concentration has more ions per unit volume, so collisions are more frequent. The activation energy and kinetic energy do not change.",
+"Well (hard) water contains Ca²⁺ and Mg²⁺ ions, which react with soap to form scum and stop it from cleaning.",
+"Stainless steel does not rust, so it is suitable for a washing machine drum.",
+"One mole of any substance contains the same number of particles, 6.02 × 10²³, so the number of molecules is equal.",
+"Dehydration of ethanol uses a catalyst such as porcelain chips (or concentrated sulphuric acid) to remove water and form ethene.",
+"We assume all the heat from the fuel goes into the water, and the container absorbs none, so the calculation is simple.",
+"Polyester forms by condensation polymerisation: a diol reacts with a dicarboxylic acid, releasing water as a by-product.",
+"0.20 × y + 0.80 × 11 = 10.8, so 0.2y = 2.0 and y = 10.",
+"Moles of acid = 0.5 × 20/1000 = 0.01 mol. P is C₂H₄O₂ (ethanoic acid), and 2 mol acid gives 1 mol H₂, so 0.005 mol × 24 000 = 120 cm³.",
+"4Y + O₂ → 2Y₂O. 0.15 mol Y₂O comes from 0.30 mol Y, so mass = 0.30 × 7 = 2.10 g.",
+"A bee sting is acidic, so a weak alkali such as baking powder paste neutralises it. Lime juice and vinegar are acidic.",
+"Yeast ferments glucose to ethanol + carbon dioxide. CO₂ turns limewater cloudy.",
+"Silver plating needs silver ions in the electrolyte, so use silver nitrate solution. Copper(II) ions deposit brown copper.",
+"Moles of Cu²⁺ = 0.5 × 100/1000 = 0.05 mol. Heat = 210 × 0.05 = 10.5 kJ, so ΔT = 10 500/(100 × 4.2) = 25 °C. Maximum temperature = 55.0 °C.",
+"Sulphur cross-links pull the polymer chains back to their original arrangement after stretching, which makes rubber II more elastic.",
+"Mean volume of HCl = 25.00 cm³. H⁺ = 0.1 × 0.025 = 0.0025 mol, so Ba(OH)₂ = 0.00125 mol in 25 cm³, which is 0.050 mol dm⁻³.",
+"Both give 0.05 mol H₂ (0.1 mol H⁺ each), so the final volume is the same. H₂SO₄ is more concentrated in H⁺, so its curve is steeper."
+],mrsm:[
+"Chadwick discovered the neutron, so the nucleus contains protons and neutrons.",
+"0.5 mol O₂ contains 1 mol of O atoms, the same as 1 mol of helium atoms. Mr of O₂ = 32; molecules = 3.01 × 10²³; volume = 12 dm³.",
+"Xenon is used as a general anaesthetic.",
+"Going down Group 1, atomic size increases, so the outermost electron is farther from the nucleus. The nuclear attraction is weaker and the electron is donated more easily.",
+"Hydrogen and chlorine share one pair of electrons. The chlorine atom also has 3 lone pairs, so that it has an octet.",
+"Metals conduct electricity in the solid state. Glucose and SiO₂ are covalent, and NaCl conducts only when molten or dissolved.",
+"Mg + acid gives hydrogen gas, which burns with a ‘pop’ sound on a lighted splinter.",
+"The sulphur precipitate makes the mixture cloudy. This can be observed and measured by timing how long a cross takes to disappear.",
+"Stainless steel items are made of iron (the main component) with chromium, nickel and carbon.",
+"Oxidation means loss of electrons, gain of oxygen, loss of hydrogen, or an increase in oxidation number.",
+"Cracking uses a catalyst (e.g. alumina) at high temperature to break long chains into shorter ones. Separation by boiling point is fractional distillation.",
+"The structure in Diagram 4 contains the –COO– group, so it is an ester.",
+"Sodium thiosulphate dissolving is endothermic. Sulphuric acid, KOH and CaO release heat when they dissolve.",
+"Glucose is the monomer of cellulose. Starch also comes from glucose, but sucrose is not a monomer; protein comes from amino acids.",
+"Betamethasone valerate (a steroid) can cause skin irritation and changes in skin pigmentation.",
+"Z³⁺ has 10 electrons, so atom Z has 13 electrons and 13 protons. Neutrons = 27 − 13 = 14. The arrangement is 2.8.3.",
+"If N = 14, then 2 Si atoms (2 × 28 = 56) and 8 Li atoms (8 × 7 = 56) have the same mass as the one in the diagram.",
+"Atomic size decreases across a period and increases down a group, so the smallest atom is at the top right and the largest at the bottom left.",
+"A metal and a non-metal bond by transferring electrons (ionic). Use the ion charges to find the formula: X⁺ and Y⁻ give XY.",
+"Ant stings contain methanoic acid. Toothpaste is alkaline and neutralises it.",
+"Bromine water oxidises green Fe²⁺ to brown Fe³⁺, so the solution turns from green to brown.",
+"Zinc is in excess, so the acid is used up and the gas volume stays constant, so the rate is zero.",
+"Zirconia is strong, hard, inert and corrosion-resistant, which makes it suitable for dental implants.",
+"The reduction of iron(III) oxide by CO happens in the upper part of the furnace. The marking scheme gives Zone 3 as per Diagram 11.",
+"Magnesium is more electropositive than iron, so it is oxidised in preference to the steel (sacrificial protection).",
+"Propene hydrates when reacted with steam (with a catalyst) to form an alcohol.",
+"Butan-1-ol is oxidised by acidified dichromate(VI) to butanoic acid, C₃H₇COOH.",
+"Neutralisation (reaction II) is exothermic, so the reactants have more energy than the products.",
+"Identify the repeating unit in the polymer; the monomer is that unit with the C=C double bond restored.",
+"Sodium nitrite preserves processed meat. It is a preservative, not a dye or a flavouring.",
+"Mr of CH₃CONH₂ = 59. 14.75 ÷ 59 = 0.25 mol. C atoms = 0.25 × 2 × 6.02 × 10²³ = 3.0 × 10²³.",
+"Limescale (CaCO₃) dissolves in acids such as vinegar and lemon juice. Baking powder is alkaline and soap does not dissolve it.",
+"L is Group 2 (L²⁺) and M is Group 16 (M²⁻), so they react in a 1:1 ratio. M is a diatomic gas, so 2L + M₂ → 2LM.",
+"50 cm³ of Solution I at y mol dm⁻³ is diluted to 500 cm³ at 0.1 mol dm⁻³, so y = 1.0. Then x = 1.0 × 0.25 × 40 = 10.0 g NaOH.",
+"The second minute is 60–120 s: (44.20 − 22.80) ÷ 60 = 0.357 cm³ s⁻¹.",
+"At the anode Cl⁻ ions are discharged in concentrated CuCl₂, giving Cl₂. At the cathode Cu²⁺ (E° +0.34 V) is discharged rather than H⁺.",
+"J is propene, which decolourises bromine water. K is propanoic acid, which reacts with carbonate to give CO₂. L is CO₂, which turns limewater cloudy.",
+"Moles of ethanol = 1.15 ÷ 46 = 0.025 mol. Heat = 1371 × 0.025 = 34.275 kJ, so ΔT = 34 275 ÷ (300 × 4.2) = 27.2 °C. Add this to the initial temperature in the diagram.",
+"A white precipitate insoluble in excess NaOH and NH₃ is Mg²⁺. The white precipitate with AgNO₃ is AgCl, so the anion is Cl⁻: magnesium chloride.",
+"Set I releases twice the temperature rise because the acid is diprotic (sulphuric acid). Y gives a higher rise than Z at the same moles, so Z is the weak acid."
+]};
+var NAMES={melaka:"Melaka",sbp:"SBP 2025",mrsm:"MRSM 2025"},ALL=[],ALLM={};
+Object.keys(P).forEach(function(pk){P[pk].Q.forEach(function(q,i){var o={id:pk+(i+1),p:pk,n:i+1,t:q[0],o:q[1],d:q[2],a:P[pk].K[i],e:(E[pk]||[])[i]||""};ALL.push(o);ALLM[o.id]=o})});
+var app=document.getElementById("app"),S={name:"",cls:"",sel:"all",cn:"20",deck:[],ans:{},i:0,sub:false},db=null,usr=null,uid=null,allRows=[],DP="all";
+function h(t){return String(t).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function shuf(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}return a}
+function papOpts(sel,all){return'<option value="all">'+all+'</option>'+Object.keys(P).map(function(k){return'<option value="'+k+'"'+(sel===k?' selected':'')+'>'+NAMES[k]+' (40)</option>'}).join("")}
+function score(){return S.deck.filter(function(d){return S.ans[d.id]===d.a}).length}
+function home(){var t=usr&&usr.canEdit&&usr.canEdit();
+app.innerHTML='<h1>Chemistry Paper 1 Quiz Generator</h1><div class="card"><input id="n" placeholder="Full name" value="'+h(S.name)+'"><input id="c" placeholder="Class" value="'+h(S.cls)+'"><label class="mu">Paper</label><select id="pp">'+papOpts(S.sel,"All papers (mixed)")+'</select><label class="mu">Number of questions</label><select id="cn"><option>10</option><option>20</option><option>40</option><option value="999">All available</option></select><label class="mu">Mode</label><select id="md"><option value="p">Practice (instant feedback + guidance)</option><option value="t">Test (feedback at the end)</option></select><button class="pri" id="go">Start</button></div>'+(t?'<button id="tc">Teacher dashboard</button>':'');
+document.getElementById("cn").value=S.cn;document.getElementById("md").value=S.mode||"p";
+document.getElementById("go").onclick=function(){S.name=document.getElementById("n").value.trim();S.cls=document.getElementById("c").value.trim();if(!S.name){alert("Please enter your name");return}
+S.sel=document.getElementById("pp").value;S.cn=document.getElementById("cn").value;S.mode=document.getElementById("md").value;var pool=ALL.filter(function(q){return S.sel==="all"||q.p===S.sel});if(S.sel==="all")shuf(pool);S.deck=pool.slice(0,+S.cn);S.ans={};S.i=0;S.sub=false;S.t0=Date.now();quiz()};
+if(t)document.getElementById("tc").onclick=dash}
+function quiz(){var q=S.deck[S.i],a=S.ans[q.id],r=S.sub||(S.mode==="p"&&!!a),N=S.deck.length;
+var o=q.o.map(function(x,j){var L="ABCD"[j],c="opt";if(r){if(L===q.a)c+=" ok";else if(L===a)c+=" bad"}else if(a===L)c+=" sel";return'<button class="'+c+'" data-l="'+L+'"><b>'+L+'.</b> '+h(x)+'</button>'}).join("");
+var nav=S.deck.map(function(d,k){var c=S.ans[d.id]?"done":"";if(S.sub)c=S.ans[d.id]===d.a?"done":"";return'<button class="'+c+'" data-k="'+k+'">'+(k+1)+'</button>'}).join("");
+app.innerHTML='<div class="row"><b>Question '+(S.i+1)+' / '+N+'</b><span class="mu">'+h(S.name)+' · '+NAMES[q.p]+' Q'+q.n+'</span></div><div class="card"><p>'+h(q.t)+'</p>'+(q.d?'<p class="dg">📷 This question depends on a diagram in the original paper; please refer to the printed paper.</p>':'')+o+(r?'<p><b style="color:var(--'+(a===q.a?'ok':'bad')+')">'+(a===q.a?'✔ Correct':(a?'✘ Incorrect':'Not answered'))+'</b> · correct answer: <b>'+q.a+'</b></p>'+(q.e?'<p class="dg" style="background:color-mix(in srgb,var(--ac) 12%,var(--card))">💡 '+h(q.e)+'</p>':''):'')+'</div><div class="row"><button id="pv">← Previous</button><button id="nx">Next →</button></div><div class="card"><div class="nav">'+nav+'</div></div>'+(r?'<button id="hm">Results</button>':'<button class="pri" id="sb">Submit answers</button>');
+app.querySelectorAll(".opt").forEach(function(b){b.onclick=function(){if(S.sub||(S.mode==="p"&&S.ans[q.id]))return;S.ans[q.id]=b.dataset.l;quiz()}});
+app.querySelectorAll(".nav button").forEach(function(b){b.onclick=function(){S.i=+b.dataset.k;quiz()}});
+document.getElementById("pv").onclick=function(){S.i=Math.max(0,S.i-1);quiz()};
+document.getElementById("nx").onclick=function(){S.i=Math.min(N-1,S.i+1);quiz()};
+var sb=document.getElementById("sb");if(sb)sb.onclick=submit;var hm=document.getElementById("hm");if(hm)hm.onclick=result}
+function submit(){var u=S.deck.filter(function(d){return!S.ans[d.id]}).length;if(u&&!confirm(u+" question(s) unanswered. Submit anyway?"))return;S.sub=true;result();save()}
+function save(){if(!db||!uid)return;var res={};S.deck.forEach(function(d){res[d.id]=S.ans[d.id]||""});try{db.collection("results").doc(uid).set({name:S.name,cls:S.cls,paper:S.sel,score:score(),total:S.deck.length,res:res,secs:Math.round((Date.now()-S.t0)/1000),ts:Date.now()}).catch(function(){})}catch(e){}}
+function result(){var s=score(),N=S.deck.length;app.innerHTML='<h1>Results</h1><div class="card"><p style="font-size:32px;margin:0"><b>'+s+' / '+N+'</b> ('+Math.round(s/N*100)+'%)</p><p class="mu">'+(db?'Your result has been sent to your teacher.':'Your result could not be sent to the teacher (connection unavailable).')+'</p></div><button class="pri" id="rv">Review answers</button> <button id="hm">Home</button>';
+document.getElementById("rv").onclick=function(){S.i=0;quiz()};document.getElementById("hm").onclick=home}
+function dash(){app.innerHTML='<h1>Teacher dashboard</h1><p class="mu" id="st">Loading…</p><div id="d"></div><button id="hm">Home</button>';document.getElementById("hm").onclick=home;
+if(!db){document.getElementById("st").textContent="Database unavailable.";return}render()}
+function render(){var d=document.getElementById("d");if(!d)return;
+var rows=allRows.filter(function(r){return DP==="all"||r.paper===DP});document.getElementById("st").textContent=rows.length+" submission(s)";
+var avg=rows.length?Math.round(rows.reduce(function(a,r){return a+r.score/r.total*100},0)/rows.length):0,st={};
+rows.forEach(function(r){var m=r.res||{};for(var id in m){var q=ALLM[id];if(!q)continue;var s=st[id]||(st[id]={n:0,c:0,w:{}});s.n++;if(m[id]===q.a)s.c++;else if(m[id])s.w[m[id]]=(s.w[m[id]]||0)+1}});
+var qs=Object.keys(st).map(function(id){var s=st[id],m="",mx=0;for(var l in s.w)if(s.w[l]>mx){mx=s.w[l];m=l}return{id:id,n:s.n,p:Math.round(s.c/s.n*100),w:m}}).sort(function(a,b){return a.p-b.p});
+d.innerHTML='<select id="dp">'+papOpts(DP,"All papers")+'</select><div class="card"><b>Average score: '+avg+'%</b></div><div class="card sc"><table><tr><th>Name</th><th>Class</th><th>Paper</th><th>Score</th><th>Time</th></tr>'+rows.slice().sort(function(a,b){return b.score/b.total-a.score/a.total}).map(function(r){return'<tr><td>'+h(r.name)+'</td><td>'+h(r.cls)+'</td><td>'+h(NAMES[r.paper]||"Mixed")+'</td><td>'+r.score+'/'+r.total+'</td><td>'+Math.floor(r.secs/60)+'m '+r.secs%60+'s</td></tr>'}).join("")+'</table></div><div class="card sc"><b>Question accuracy (hardest first)</b><table><tr><th>Question</th><th>% correct</th><th></th><th>Most common wrong</th><th>Attempts</th></tr>'+qs.map(function(x){var q=ALLM[x.id];return'<tr><td>'+NAMES[q.p]+' Q'+q.n+'</td><td>'+x.p+'%</td><td style="width:30%"><div class="bar"><i style="width:'+x.p+'%"></i></div></td><td>'+(x.w||"–")+'</td><td>'+x.n+'</td></tr>'}).join("")+'</table></div>';
+var ds=document.getElementById("dp");ds.onchange=function(){DP=ds.value;render()}}
+home();
+(async function(){try{usr=await claude.use("user");db=await claude.use("db");if(usr&&usr.id)uid=await usr.id();if(!uid)uid="s"+Math.random().toString(36).slice(2,10);if(!S.name)home();
+if(db)db.collection("results").onSnapshot(function(sn){allRows=sn.docs.map(function(x){return x.data()});render()},function(){})}catch(e){}})();
+</script></body></html>
